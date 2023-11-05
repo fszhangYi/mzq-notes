@@ -1,0 +1,14 @@
+{
+  "name": "mzq-notes",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/fszhangYi/mzq-notes.git",
+  "author": "muzhongqing <daqi_supcon@163.com>",
+  "license": "MIT",
+  "scripts": {
+    "cmt": "node ./cmt.js"
+  },
+  "dependencies": {
+    "shelljs": "^0.8.5"
+  }
+}
