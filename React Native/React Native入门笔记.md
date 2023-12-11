@@ -293,4 +293,181 @@ Screen属性：
 
 ![详情.PNG](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c2883809b4cd4992b9694e674ca16fc1~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1038&h=850&s=221901&e=png&b=282c34)
 
-未完待续...
+### BottomTab导航
+- 安装：yarn add @react-navigation/bottom-tabs
+- 使用：
+```js
+import { createBottomTabNavigator } from 'react-navigation/bottom-tabs';
+
+const Tab = createBottomTabNavigator();
+
+export default function App () {
+    return (
+        <NavigationContainer>
+            <Tab.Navigator>
+                <Tab.Screen name="Home" component={HomeScreen} />
+            </Tab.Navigator>
+        </NavigationContainer>
+    )
+}
+```
+
+为BottomTab导航菜单添加图标的过程：
+
+使用的是名为`React-native-vector-icons`的组件库:
+- 安装：npm install --save react-natice-vector-icons
+- 链接：将组件库链接到应用中去：https://github.com/oblador/react-native-vector-icons
+- 使用：具体的使用办法可以到官网上查看
+
+
+### Drawer导航
+- 安装：npm install @react-navigation/drawer
+- 使用：
+```js
+import { createDrawerNavigator } from '@react-navigation/drawer';
+
+const Drawer = createDrawerNavigator();
+
+// 然后使用Drawer.Navigator和Drawer.Screen
+```
+
+Drawer导航相关属性：
+- drawerPosition: right | left 表示的是导航来的位置
+- drawerType: front | back | slide | permanent 表示的是菜单动画效果
+- drawerStyle: backgroundColor width 表示的是菜单样式
+- drawerContentOptions: activeTinyColor itemStyle 表示的是选中菜单的时候的样式
+
+Screen相关的属性：
+- options: title drawerLabel(可以看成用组件代替了title) drawerIcon(函数，用来返回图标) headerShown(是否显示header) headerLeft和headerRight(用来声明header左侧和右侧的内容)
+
+
+### MaterialTopTab导航
+- 安装：yanr add @react-navigation/material-top-tabs react-native-tab-view
+- 使用：
+```js
+import {createMaterialTopTabNavigator} from '@react-navagation/material-top-tabs';
+
+const Tab = createMaterialTopTabNavigator();
+
+// 然后声明Tab.Navigator 和 Tab.Screen
+```
+
+MaterialTopTab导航相关的属性
+- Navigator属性：
+    - tabBarPosition: top | bottom 表示的是Tab显示的位置
+    - tabBarOptions: activeTintColor | inactiveTintColor | showIcon | showLabel | tabStyle | labelStyle(高优先级) | iconStyle
+- Scree属性：
+- options属性：
+    - title: 标题
+    - tabBarIcon: 设置标签图标-focused和color
+    - tabBarLabel: 设置标签的文字内容-focused和color
+
+
+### 路由嵌套
+- 作用：在一个导航的内容渲染另一个导航
+- 举例：
+```js
+Stack.Navigator
+ Home(Tab.Navigator)
+  Feed(Screen)
+  Messages(Screen)
+  Settings(Screen)
+```
+
+### 路由传参
+- 方式：第二参数--navigation.navigate('路由地址', {key:1})
+- 接受：被跳转到的组件由于Provider的包裹，因此可以再props中接收到路由参数，对于类组件和函数式组件：
+    - this.props.route.params.key
+    - route.params.key
+
+
+## RN架构原理
+- 1. 现有架构
+- 2. 新的架构
+
+### 现有架构的原理
+[现有架构](./架构.png)
+[现有架构设计](./架构设计.png)
+
+### 线程模型
+- Js线程： Metro 执行js的线程
+- Main线程： UI或者原生线程
+- Shadow线程： Shadow Tree和虚拟BOM Layout线程 Yoga引擎翻译Flexbox布局(在原生端是不支持css中的Flex布局的)
+
+#### 渲染机制
+[三者关系](./渲染原理.png)
+#### 数据交互
+[数据交互](./渲染原理.png)
+#### 启动过程
+[启动过程](./启动过程.png)
+#### 应用过程
+[应用过程](./应用过程.png)
+
+
+### 架构原理
+- 重构原因
+    - 之前的架构上存在许多性能问题
+    - Flutter等后起之秀的压力
+    - 2018.06-2020.12
+
+- 修改内容
+    - React 16+
+    - CodeGen 静态检查（是FaceBook推出的代码生成工具），旨在减少类型错误（可对ts或者flow代码进行转换）和通信次数
+    - JSI 允许不同的js解析引擎，还可以直接和Native进行通信，旨在减少通信压力，如避免序列和反序列化
+    - Fabric和TurboModules两部分，Fabric可以看成是新的UI层，并且简化了之前的渲染流程；而TurboModules一方面配合JSI直接调用原生模块，一方面实现了模块的按需加载
+    - Native中的很多模块分发至社区进行维护--例如：AsyncStorage WebView; 精简之后的称之为**Lean Core**
+[改进架构](./改进架构.png)
+
+## 项目实践
+1. 项目展示
+2. 数据接口
+3. UI界面
+4. 状态管理
+5. 项目优化
+
+
+### 数据接口
+- 申请接口：后端、Mock、第三方接口（和风天气）
+- 调试接口： 使用轻量级的insomnia (https://insomnia.rest/) 项目配置变量
+- 使用接口
+
+### UI界面
+1. 界面
+2. 新闻页
+3. 用户页
+
+### 背景渐变色 使用`react-native-linear-gradient`
+- 安装： yarn add react-native-linear-gradient
+- 配置： https://github.com/react-native-linear-gradient/react-native-linear-gradient
+- 使用：
+```js
+import LinearGradient from 'react-native-linear-gradient';
+
+<LinearGradient start={{x:0,y:0}} end={{x:1,y:0}} colors={['#ddd','#333']}>...</LinearGradient>
+```
+
+### 用户页
+- 个人中心
+- 登录页
+- 注册页
+
+### 动画 `react-native-animatable`
+- 安装：yarn add react-native-animatable
+- 使用：
+```jsx
+import * as Animate from 'react-native-animatable';
+<Animatable.View animation='fadeInUpBig'>
+```
+
+### paper `react-native-paper`
+- 安装：yarn add react-native-paper
+- 配置：
+- 使用：
+
+### 状态管理
+- Redux
+- 路由鉴权
+
+### 项目优化
+- 添加项目的logo
+- 修改项目的名称
