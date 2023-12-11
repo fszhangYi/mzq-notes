@@ -2,9 +2,9 @@
 
 Excalidraw是一款简单易用的绘图工具，可以帮助用户创建各种类型的图形和图表。本文将介绍Excalidraw的使用流程、优缺点、常用功能以及插件，并最后介绍几个常用的快捷键。
 
-## 适应流程
+## 使用流程
 
-使用Excalidraw进行绘图非常简单，以下是简要的适应流程：
+使用Excalidraw进行绘图非常简单，以下是简要的使用流程：
 
 1. 打开Excalidraw网站，网站地址为：https://excalidraw.com/ 开盒即用，非常方便！
 2. 创建新的绘图文档或打开现有的文档。
@@ -72,6 +72,12 @@ Excalidraw还支持一些插件，可以根据需要对工具进行扩展和定�
 ### 5. 效果展示
 下面几幅图是我使用Excalidraw绘制的，并在RN相关文章中使用到的图片；不得不说，还是非常具有吸引力的！
 
+![渲染原理.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/60a2c61da8b743ce8633f5e026e4b922~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1698&h=599&s=95296&e=png&b=ffefdd)
 
+
+![数据交互.png](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/913c7572699a47bda6b003c4b9df23af~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=2273&h=1124&s=231966&e=png&b=fffbe7)
+
+
+![应用过程.png](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/94927a300f8449b69116738f8d1d731e~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=1537&h=1268&s=181756&e=png&b=ece0d9)
 ## 最后
 希望你能喜欢上这款工具，如果可以的话，点个关注，一起交流~
