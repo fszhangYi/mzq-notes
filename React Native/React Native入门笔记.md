@@ -45,7 +45,7 @@ RN-->Bridge-->Andriod(Kotlin | Java)
 *   4.  初始化项目
 
 1.  基础环境搭建
-    安装Node.js->安装Yarn->安装RN脚手架(npm install -g react-native-cli)
+    安装Node.js->安装Yarn->安装RN脚手架(`npm install -g react-native-cli`)
 
 !windows下只能搭建Android开发环境；但是Mac下既能搭建Android开发环境，也能搭建iOS开发环境
 
@@ -59,7 +59,10 @@ RN-->Bridge-->Andriod(Kotlin | Java)
 *   4.  配置环境变量
 
 1.  安装SDK：必须是1.8版本的，需要登陆，然后一直下一步即可，使用java -version验证
+`https://www.oracle.com/java/technologies/javase/javase-jdk8-downloads.html`
 2.  安装Android Studio：下载、安装、启动Android Studio，然后创建项目
+AS下载地址为：
+`https://developer.android.com/studio/index.html`
 
 ！Android Studio会自动安装最新版本的SDK，但是RN需要特定版本的SDK，这就是为什么需要单独下载SDK的原因了。
 在Tools下找到SDK Manager，然后按照下面的顺序进行：
