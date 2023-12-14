@@ -28,16 +28,25 @@
 假设有一张多彩复杂的背景图像，需要在上面展示一段白色文字，直接放置可能导致文字难以阅读。此时，可以利用`mix-blend-mode`的`overlay`模式来实现文字与背景的和谐混合。
 
 ```css
-.background-image {
-  background-image: url('path/to/your-image.jpg');
-  position: relative;
-}
+        .background-image {
+            width: 400px;
+            height: 540px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2a0187d5dff249dc90c3d95e600e7c44~tplv-k3u1fbpfcp-jj-mark:0:0:0:0:q75.image#?w=807&h=973&s=94045&e=png&b=fff6e2');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+        }
 
-.text-overlay {
-  position: absolute;
-  color: white;
-  mix-blend-mode: overlay;
-}
+        .text-overlay {
+            position: absolute;
+            color: black;
+            font-weight: 700;
+            font-size: 24px;
+            mix-blend-mode: overlay;
+        }
 ```
 
 ```html
@@ -45,6 +54,8 @@
   <p class="text-overlay">增强视觉的同时，确保文字清晰可读</p>
 </div>
 ```
+
+[jcode](https://code.juejin.cn/pen/7312299192218009609)
 
 ### 场景二：创造艺术效果
 
