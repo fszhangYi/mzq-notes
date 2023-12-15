@@ -21,7 +21,7 @@ fetchData = () => {
 
 ### 取消未完成的Promise
 
-React组件在卸载过程中如果有未完成的Promise，则可能导致状态更新不一致或内存泄漏问题。例如，当组件在数据尚未返回前便被卸载，此时异步操作完成后仍会试图更新组件状态，这就会引发警告。为了规避此类问题，可以在组件卸载时取消Promise的后续操作：
+React组件在卸载过程中**如果有未完成的Promise，则可能导致状态更新不一致或内存泄漏问题**。例如，当组件在数据尚未返回前便被卸载，此时异步操作完成后仍会试图更新组件状态，这就会引发警告。为了规避此类问题，可以在组件卸载时取消Promise的后续操作：
 
 ```javascript
 class MyComponent extends React.Component {
@@ -88,7 +88,7 @@ class MyComponent extends React.Component {
 
 通过`async/await`，异步过程几乎如同同步代码般直观。
 
-## 小众技巧：Promise队列管理
+## 技巧：Promise队列管理
 
 在某些特定场景下，可能需要按顺序执行多个异步任务，特别当这些异步操作之间存在依赖关系时。在React中可以实现一个Promise队列，保证任务按序完成，并降低复杂度：
 
