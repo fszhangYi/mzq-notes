@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .background-image {
+            width: 400px;
+            height: 540px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('/jgsj.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            position: relative;
+        }
+
+        .text-overlay {
+            position: absolute;
+            color: black;
+            font-weight: 700;
+            font-size: 36px;
+            mix-blend-mode: overlay;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-image">
+        <p class="text-overlay">增强视觉的同时，确保文字清晰可读</p>
+    </div>
+</body>
+</html>
