@@ -1,34 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .background-image {
-            width: 400px;
-            height: 540px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-image: url('/jgsj.png');
-            background-size: contain;
-            background-repeat: no-repeat;
-            position: relative;
+        .vertical-navigation {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            width: 100px;
+            background-color: #f5f5f5;
         }
 
-        .text-overlay {
-            position: absolute;
-            color: black;
-            font-weight: 700;
-            font-size: 36px;
-            mix-blend-mode: overlay;
+        .vertical-navigation ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .vertical-navigation li {
+            margin: 10px;
+            font-size: 18px;
+            font-weight: bold;
         }
     </style>
 </head>
+
 <body>
-    <div class="background-image">
-        <p class="text-overlay">增强视觉的同时，确保文字清晰可读</p>
-    </div>
+    <nav class="vertical-navigation">
+        <ul>
+            <li>文学 Literature</li>
+            <li>歷史 History</li>
+            <li>科学 Science</li>
+            <li>漫画 Comics</li>
+        </ul>
+    </nav>
 </body>
+
 </html>
