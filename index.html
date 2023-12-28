@@ -6,59 +6,37 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        body {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+        /* 多行文本截断样式 */
+        .multi-line-ellipsis {
+            width: 350px;
+            border: 1px solid red;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 3;
+            /* 限制在3行内 */
         }
 
-        /* 设定滚动捕捉元素 */
-        .chapter {
-            scroll-snap-align: start;
-            /* 设置顶部外边距来避免头部导航遮挡 */
-            scroll-margin-top: 10px;
-            /* 导航栏高度设为70px */
-        }
-
-        /* 设定滚动容器 */
-        .container {
-            /* 启用Y轴滚动捕捉 */
-            width: 500px;
-            scroll-snap-type: y mandatory;
-            overflow-y: scroll;
-            height: 100vh;
-        }
-
-        section {
-            font-size: 24px;
+        /* 保持兼容性的完整写法 */
+        .multi-line-ellipsis {
+            overflow: hidden;
+            display: box;
+            display: -webkit-box;
+            display: -ms-flexbox;
+            -webkit-box-orient: vertical;
+            -ms-flex-direction: column;
+            -webkit-line-clamp: 3;
+            /* 限制在3行内 */
+            line-clamp: 3;
+            /* 标准化写法，未来主流浏览器支持情况 */
         }
     </style>
 </head>
 
 <body>
-    <nav>
-        <!-- 固定顶部的导航栏内容 -->
-        <span><a href="/#chapter1">chapter1</a></span>
-        <span><a href="/#chapter2">chapter2</a></span>
-
-    </nav>
-    <div class="container">
-        <section id="chapter1" class="chapter">
-            <!-- 章节1的内容 -->
-            <h3>chapter1</h3>
-            马龙，中国国乒的一颗耀眼明珠。在荣誉榜上，无人能与他相提并论，因其是唯一一个实现双冠金满贯的选手，他被誉为中国国乒历史上最杰出的球员之一。尽管他已经年届35，很多人认为他或许应该考虑退役，但马龙却坚信只要内心的热爱依旧燃烧，他依然是一位顶尖球员。特别是在成都混合世界杯和乒超联赛上，马龙的表现依然波澜不惊，毫无疑问，他仍然是球队中最为关键的一员。
-        </section>
-        <section id="chapter2" class="chapter">
-            <h3>chapter2</h3>
-            随着乒超联赛的结束，中国国乒的队员们从深圳返回北京，开始冬训准备。尽管马龙完全有资格选择不参加冬训，而是选择好好恢复并备战即将到来的多哈男子年度总决赛，但他却出人意料地选择与其他队员一起参加冬训。更加意外的是，马龙并没有利用老将的特权，而是像其他队员一样全力投入到冬训中。实际上，央视在27日对国乒的冬训进行了报道，特别点名称赞马龙是国乒冬训的楷模。那么，为什么会这样呢？
-            据报道，每当国乒冬训的常规项目结束后，马龙总是会邀请队友们一起进行额外的训练。在接受采访时，当被问及尽管已经屡获殊荣，为何仍然如此努力时，马龙表示，每一次离开赛场，他都会“告别过去的成就”，怀着挑战者的心态继续前行。为什么马龙要在冬训期间加倍训练呢？马龙解释道：“要通过坚持不懈的训练来保持身体的基本素质，为高质量完成比赛任务做好准备。
-
-        </section>
-        <section>
-            <h3>chapter3</h3>
-            除了努力提升自己的水平，作为球队的老将，马龙也明白，当他自己都主动加练时，其他队员更不能有丝毫的懈怠，因为如果连马龙都没有放松的资格，那么其他队员就更不应该放松。35岁的马龙仍全力追逐着自己的梦想，甚至以此激励自己，他用六个字告别了过去的成就，让自己的心态回归平和，放弃了老将的特权，与年轻队员们一起投入冬训。可以肯定，这一决定得到了刘国梁的认可，而年轻队员们也会因马龙如此的努力而倍感鼓舞。
-        </section>
-    </div>
+    <p class="multi-line-ellipsis">
+        这是一个很长的段落文本，它含有很多很多的文字。为了不让这些文本占据太多的空间，特别是在用户界面的卡片或列表中，使用line-clamp属性来限制这个段落仅展示最多三行文本非常有用。如果文本超出了三行，超出的文本将以省略号方式显示，从而保持布局的整洁并提升用户的阅读体验。
+    </p>
 </body>
 
 </html>
