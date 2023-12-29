@@ -1,42 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="zh">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-        /* 多行文本截断样式 */
-        .multi-line-ellipsis {
-            width: 350px;
-            border: 1px solid red;
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 3;
-            /* 限制在3行内 */
-        }
+<meta charset="UTF-8">
+<title>响应式Grid间隔示例</title>
+<style>
+/* CSS样式直接放置在style标签中，或者可以放在外部文件中 */
+:root {
+  --spacing-unit: 8px;
+}
 
-        /* 保持兼容性的完整写法 */
-        .multi-line-ellipsis {
-            overflow: hidden;
-            display: box;
-            display: -webkit-box;
-            display: -ms-flexbox;
-            -webkit-box-orient: vertical;
-            -ms-flex-direction: column;
-            -webkit-line-clamp: 3;
-            /* 限制在3行内 */
-            line-clamp: 3;
-            /* 标准化写法，未来主流浏览器支持情况 */
-        }
-    </style>
+@media (min-width: 600px) {
+  :root {
+    --spacing-unit: 16px;
+  }
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --spacing-unit: 24px;
+  }
+}
+
+.item {
+  padding: calc(2 * var(--spacing-unit));
+}
+</style>
 </head>
-
 <body>
-    <p class="multi-line-ellipsis">
-        这是一个很长的段落文本，它含有很多很多的文字。为了不让这些文本占据太多的空间，特别是在用户界面的卡片或列表中，使用line-clamp属性来限制这个段落仅展示最多三行文本非常有用。如果文本超出了三行，超出的文本将以省略号方式显示，从而保持布局的整洁并提升用户的阅读体验。
-    </p>
-</body>
 
+<div class="item">内容项1</div>
+<div class="item">内容项2</div>
+<div class="item">内容项3</div>
+
+</body>
 </html>
